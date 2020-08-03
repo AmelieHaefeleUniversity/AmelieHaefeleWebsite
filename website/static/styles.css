@@ -1,0 +1,279 @@
+/*Master styles*/
+body{
+
+    margin: 0px;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.containerr{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section{
+    padding: 5rem 0;
+}
+
+
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+/*Global Sytles*/
+header{
+    width: 100%;
+    height: 5rem;
+}
+.container{
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+
+/*Nav styles*/
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+}
+
+.leftside{
+    display: flex;
+}
+
+.nav-wrapper > .leftside > div{
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.nav-link-wrapper{
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a{
+    color: rgb(134, 129, 129);
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover{
+    border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover{
+    color:black;
+}
+
+/*About me Styles*/
+.aboutme{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(135deg, rgba(69, 104, 220, 0.9)0%,rgba(250, 172, 168,0.8)100%)
+    ,url("images/code.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.aboutme::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4.7rem;
+    background-image: url("images/wave-small.png")center no-repeat;
+    background-size: cover;
+}
+
+.about-me{
+   width: 100%; 
+   max-width: 50rem;
+   color: #feffff;
+   transform: translateY(20%);
+}
+
+.about-me h3{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.about-me h1{
+    font-family: 'Aldrich',sans-serif;
+    font-size: 4rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.about-me p{
+    font-size: 14px; 
+    line-height: 24px; 
+    margin: 0 0 24px; 
+    text-align: justify; 
+    text-justify: inter-word;
+      
+}
+/*about me button*/
+.btn{
+    background-color: eb648c;
+    border-radius: 2rem;
+    color: #feffff;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    transition: background-color 650ms;
+    background-color:#79447a;
+
+}
+
+.btn:hover{
+    background-color:#5d355e;
+}
+
+
+
+/* Coding Projects and about them */
+.PastCodingProjects{
+    padding: 0;
+}
+.title-heading{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10 rem;
+    color:rgba(0,0,0,.7);
+}
+.title-heading h1{
+    font-family: 'Aldrich', sans-serif;
+    font-size: 2rem;
+    margin: .5rem 0 1rem;
+}
+
+
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    grid-gap: 2.5rem;
+}
+
+.projects-grid-item{
+    height: 40rem;
+    padding: 5rem;
+    color: #feffff;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.projects-grid-item::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg,rgba(69, 104, 220,0.9) 0%,rgba(250, 172, 168,0.8)100% );
+    z-index: -1;
+
+}
+
+
+.TicTacToe{
+    background: url("images/TicTacToe.png") center no-repeat;
+}
+
+.Quad{
+    background: url("images/Quad.png") center no-repeat;
+}
+
+.Compliement{
+    background: url("images/Comp.png") center no-repeat;
+}
+
+.projects-grid-item i{
+    font-size: 4rem;
+    color:#feffff;  
+}
+
+.projects-grid-item h1{
+    font-family: 'Aldrich', sans-serif;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+/*Contact me Style*/
+
+.contactform{
+    width: 85%;
+    max-width: 600px;
+    background:#feffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px rgb(69, 104, 220);
+    font-family: 'Aldrich', sans-serif;
+
+    
+}
+
+
+
+.contactform h1{
+    margin-top: 0;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 200;
+}
+
+.txt-box{
+    border: 1px solid gray;
+    margin: 8px 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+.txt-box Label{
+    display: black;
+    text-align: left;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 14px;
+
+}
+.txt-box input, .txt-box textarea{
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    margin-top: 6px;
+}

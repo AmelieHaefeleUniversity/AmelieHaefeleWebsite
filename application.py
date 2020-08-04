@@ -1,5 +1,5 @@
 from flask import Flask
-app = Flask(__name__)
+application = app = Flask(__name__)
 
 # https://stackoverflow.com/questions/43728500/python-flask-e-mail-form-example
 

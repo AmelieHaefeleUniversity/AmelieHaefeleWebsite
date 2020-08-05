@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 
-application = app = Flask(__name__)
+application = app = Flask(__name__, static_folder="static")
 
 
 # https://stackoverflow.com/questions/43728500/python-flask-e-mail-form-example
@@ -9,7 +9,7 @@ application = app = Flask(__name__)
 @app.route("/")
 def home():
     # return app.send_static_file("index.html")
-    return render_template('index.html')
+    return render_template("index.html")
 
 
 # @app.route('/user/<name>')

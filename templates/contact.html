@@ -14,13 +14,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
     <!--Our own stylesheet-->
-    <link rel="stylesheet" href="styles-contact.css">
+    <link href="{{ url_for('static', filename='styles-contact.css') }}" rel="stylesheet" />
 </head>
 
 
 <body>
     <script type="text/javascript" src="scripts.js"></script>
-       <header>
+    <header>
 
 
             <div class="nav-wrapper">
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="nav-link-wrapper">
-                    <a href="static/contact.html">Contact Me</a>
+                    <a href="/contactMe">Contact Me</a>
                     </div>
 
                     <div class="nav-link-wrapper">
@@ -56,35 +56,35 @@
             </div>
         </div>
     </header>
-    <main>
 
-        <section class="contactform">
-            
-                <h1>Contact Me</h1>
-                <div class="txt-box">
-                    <Label>Full Name</Label>
-                    <input type="text" name="name" id="" placeholder="Enter Your Name">
-                </div>
+        <div class="contactform">
+            <form action="/emailSubmit" method="POST">
 
-                <div class="txt-box">
-                    <Label>Email</Label>
-                    <input type="text" name="email"  placeholder="Enter Your Email">
-                </div>
+                    <h1>Contact Me</h1>
+                    <div class="txt-box">
+                        <Label>Full Name</Label>
+                        <input type="text" name="name" id="" placeholder="Enter Your Name">
+                    </div>
 
-                <div class="txt-box">
-                    <Label>Phone Number</Label>
-                    <input type="text" name="number" placeholder="Enter Your Phone Number">
-                </div>
+                    <div class="txt-box">
+                        <Label>Email</Label>
+                        <input type="text" name="email"  placeholder="Enter Your Email">
+                    </div>
 
-                <div class="txt-box">
-                    <Label>Message</Label>
-                    <input type="text" name="message"  placeholder="Enter Your Message Here">
-                    <textarea></textarea>
-                </div>
-                <button type="Submit" name="Sumbit">Sumbit</button>
-            
+                    <div class="txt-box">
+                        <Label>Phone Number</Label>
+                        <input type="text" name="subject" placeholder="Enter Your Subject">
+                    </div>
+
+                    <div class="txt-box">
+                        <Label>Message</Label>
+                        <input type="text" name="message"  placeholder="Enter Your Message Here">
+                    </div>
+                    <button type="Submit" name="submit">Submit</button>
+
+
+            </form>
         </div>
-        </section>
 
     </main>
        

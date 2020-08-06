@@ -1,20 +1,51 @@
 from flask import Flask
 from flask import render_template
+from flask import request, redirect, url_for
+from flask_mail import Mail, Message
 
 application = app = Flask(__name__, static_folder="static")
 
+app.config.update(dict(
+    MAIL_SERVER='smtp.googlemail.com',
+    MAIL_PORT=465,
+    MAIL_USE_TLS=False,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME='amelieresumewebsite@gmail.com',
+    MAIL_PASSWORD='P3n2guin!'
+))
 
-# https://stackoverflow.com/questions/43728500/python-flask-e-mail-form-example
+mail = Mail(app)
+
 
 @app.route("/")
 def home():
-    # return app.send_static_file("index.html")
-    return render_template("index.html")
+    title = "Home"
+    return render_template("index.html", title=title)
 
 
-# @app.route('/user/<name>')
-# def user(name):
-# return '<h1>Hello %s!!</h1>' % name
+@app.route("/contactMe", methods=["GET"])
+def contactMe():
+    title = "Contact me"
+    return render_template("contact.html", title=title)
+
+
+@app.route("/emailSubmit", methods=["POST"])
+def form():
+    name = request.form.get("name")
+    email = request.form.get("email")
+    subject = request.form.get("subject")
+    message = request.form.get("message")
+
+    if not name or not email or not message:
+        flash = "Name, Email, and Message are required"
+        return redirect(url_for('contactMe'))
+
+    msg = Message('Email from {} / {} with subject {}'.format(name, email, subject),
+                  sender='amelieresumewebsite@gmail.com', recipients=['amelie@haefele.org'],
+                  body="{} {}".format(email, message))
+    mail.send(msg)
+
+    return render_template("emailSubmitted.html")
 
 
 if __name__ == '__main__':

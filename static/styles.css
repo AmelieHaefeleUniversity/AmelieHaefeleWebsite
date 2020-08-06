@@ -10,7 +10,7 @@ img{
     height: auto;
 }
 
-.containerr{
+.container{
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
@@ -277,3 +277,17 @@ header{
     font-size: 18px;
     margin-top: 6px;
 }
+
+/* Styles for email Submitted*/
+
+.center-text{
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    color: #feffff;
+    font-family: 'Aldrich',sans-serif;
+    font-size: 4rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+

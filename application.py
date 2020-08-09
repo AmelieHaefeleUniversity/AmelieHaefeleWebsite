@@ -1,6 +1,7 @@
+import flask
 from flask import Flask
 from flask import render_template
-from flask import request, redirect, url_for
+from flask import request, redirect, url_for, send_file
 from flask_mail import Mail, Message
 
 application = app = Flask(__name__, static_folder="static")
@@ -21,6 +22,11 @@ mail = Mail(app)
 def home():
     title = "Home"
     return render_template("index.html", title=title)
+
+
+@app.route("/download")
+def pdf():
+    return flask.send_file('static/resume.PDF', as_attachment=True)
 
 
 @app.route("/contactMe", methods=["GET"])

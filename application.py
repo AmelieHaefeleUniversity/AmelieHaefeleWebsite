@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import request, redirect, url_for
 from flask_mail import Mail, Message
+from flask import send_file
 
 application = app = Flask(__name__, static_folder="static")
 
@@ -24,9 +25,10 @@ def home():
     return render_template("index.html", title=title)
 
 
-@app.route("/download")
+@app.route("/download/")
 def pdf():
-    return flask.send_from_directory('static/resume.PDF', as_attachment=True)
+    #return flask.send_from_directory('static/resume.PDF', as_attachment=True)
+    return send_file('/static/resume.PDF', attachment_filename='resume.PDF')
 
 
 @app.route("/contactMe", methods=["GET"])

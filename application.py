@@ -27,8 +27,8 @@ def home():
 
 @app.route("/download/")
 def pdf():
-    # return flask.send_from_directory('static/resume.PDF', as_attachment=True)
-    return send_from_directory('/static/resume.PDF', attachment_filename='resume.PDF')
+    title = "Amelie Haefele's Resume"
+    return render_template("resume.html", title=title)
 
 
 @app.route("/contactMe", methods=["GET"])

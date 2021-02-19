@@ -135,7 +135,7 @@ header{
     text-justify: inter-word;
       
 }
-/*about me button*/
+
 .btn{
     background-color: eb648c;
     border-radius: 2rem;
@@ -146,6 +146,7 @@ header{
     text-transform: uppercase;
     transition: background-color 650ms;
     background-color:#79447a;
+    text-decoration: none;
 
 }
 
